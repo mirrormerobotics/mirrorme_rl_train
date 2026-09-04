@@ -1,0 +1,3 @@
+[submodule "resources/BPX"]
+	path = resources/BPX
+	url = https://github.com/mirrormerobotics/BPX.git
