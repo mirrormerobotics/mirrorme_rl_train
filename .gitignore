@@ -11,3 +11,4 @@ policy/
 videos/
 outputs/
 .codex
+.agents/

@@ -92,7 +92,7 @@ def feet_contact_force_l1(
     sensor_cfg: SceneEntityCfg,
     max_contact_force: float = 120.0,
 ) -> torch.Tensor:
-    """Penalize peak foot-contact force above a hardware-friendly threshold."""
+    """Penalize peak foot-contact force above the configured training threshold."""
 
     contact_sensor: ContactSensor = env.scene.sensors[sensor_cfg.name]
     forces = contact_sensor.data.net_forces_w_history[:, :, sensor_cfg.body_ids, :]

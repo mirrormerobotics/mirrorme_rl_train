@@ -6,6 +6,7 @@ cd "$ROOT"
 usage() {
   cat <<'EOF'
 Usage:
+  ./bpx.sh setup [environment-name] [--skip-contract]
   ./bpx.sh install
   ./bpx.sh contract [Isaac Lab args]
   ./bpx.sh train [train args]
@@ -17,6 +18,9 @@ EOF
 command="${1:-}"
 [[ $# -gt 0 ]] && shift || true
 case "$command" in
+  setup)
+    bash ./scripts/setup_environment.sh "$@"
+    ;;
   install)
     python -m pip install -e source/mirrorme_rl_train
     ;;

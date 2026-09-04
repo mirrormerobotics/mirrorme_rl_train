@@ -1,7 +1,7 @@
 """MIRRORME RL Train Isaac Lab manager-based flat-ground locomotion task for BPX.
 
-Deployment contract
--------------------
+Training interface
+------------------
 * Actor observation group: exactly 45 dimensions.
 * Action: 12 joint-position residuals.
 * Critic: actor observations plus privileged base linear velocity (48 dimensions).
@@ -103,14 +103,13 @@ class CommandsCfg:
             lin_vel_x=(-1.5, 1.5),
             lin_vel_y=(-1.0, 1.0),
             ang_vel_z=(-2.0, 2.0),
-            heading=(-math.pi, math.pi),
         ),
     )
 
 
 @configclass
 class ActionsCfg:
-    """Twelve residual joint-position commands in deployment order."""
+    """Twelve residual joint-position commands in the documented policy order."""
 
     joint_position = mdp.JointPositionActionCfg(
         asset_name="robot",
